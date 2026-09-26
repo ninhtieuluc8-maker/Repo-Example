@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FocusFlow — ứng dụng quản lý công việc hằng ngày." />
+    <title>FocusFlow · Công việc hôm nay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div><p class="eyebrow">THỨ SÁU, 26 THÁNG 9</p><h1>Một ngày thật<br /><em>tập trung.</em></h1></div>
+        <div class="sun" aria-hidden="true">☀</div>
+      </header>
+      <section class="progress-card" aria-label="Tiến độ hôm nay">
+        <div class="progress-copy"><span id="progress-label">3 / 5 việc đã hoàn thành</span><strong id="progress-percent">60%</strong></div>
+        <div class="progress-track"><div class="progress-value" id="progress-value"></div></div>
+      </section>
+      <section class="task-section" aria-labelledby="task-heading">
+        <div class="section-heading"><h2 id="task-heading">Việc cần làm</h2><div class="filters" role="group" aria-label="Lọc công việc"><button class="filter active" type="button" data-filter="all">Tất cả</button><button class="filter" type="button" data-filter="active">Đang làm</button><button class="filter" type="button" data-filter="done">Đã xong</button></div></div>
+        <ul class="task-list" id="task-list" aria-live="polite"></ul><p class="empty-state" id="empty-state" hidden>Không có công việc nào ở đây.</p>
+      </section>
+      <form class="add-task" id="add-task-form">
+        <label class="sr-only" for="task-input">Tên công việc mới</label><input id="task-input" name="task" type="text" maxlength="100" placeholder="Thêm một việc nhỏ…" required />
+        <label class="sr-only" for="priority-input">Mức độ ưu tiên</label><select id="priority-input" name="priority"><option value="normal">Bình thường</option><option value="high">Quan trọng</option></select><button type="submit" aria-label="Thêm công việc">+</button>
+      </form>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

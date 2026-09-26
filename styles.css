@@ -1,0 +1,37 @@
+:root { --ink: #26352d; --muted: #728078; --paper: #fcfaf5; --card: #f0f3e8; --accent: #f0a75d; --line: #dfe5d9; --done: #94a99a; }
+* { box-sizing: border-box; }
+body { min-height: 100vh; margin: 0; background: #e8eee5; color: var(--ink); font-family: "DM Sans", sans-serif; }
+button, input, select { font: inherit; }
+.app-shell { width: min(100%, 720px); min-height: 100vh; margin: auto; padding: 56px 42px 42px; background: var(--paper); }
+.hero, .section-heading, .progress-copy, .task { display: flex; align-items: center; justify-content: space-between; }
+.eyebrow { margin: 0 0 12px; color: var(--muted); font-size: .74rem; font-weight: 700; letter-spacing: .11em; }
+h1 { margin: 0; font-family: "Playfair Display", serif; font-size: clamp(2.4rem, 7vw, 3.8rem); line-height: .97; letter-spacing: -.04em; }
+h1 em { color: #d7863f; font-style: normal; }
+.sun { display: grid; width: 55px; height: 55px; place-items: center; border-radius: 50%; background: #ffe1ae; color: #cf7729; font-size: 1.7rem; }
+.progress-card { margin: 40px 0 46px; padding: 19px 21px; border-radius: 16px; background: var(--card); }
+.progress-copy span { color: var(--muted); font-size: .88rem; }
+.progress-copy strong { font-size: 1.15rem; }
+.progress-track { height: 7px; margin-top: 15px; overflow: hidden; border-radius: 99px; background: #dce4d5; }
+.progress-value { width: 0; height: 100%; border-radius: inherit; background: var(--accent); transition: width .3s ease; }
+h2 { margin: 0; font-size: 1.28rem; letter-spacing: -.03em; }
+.filters { display: flex; gap: 5px; }
+.filter { padding: 6px 9px; border: 0; border-radius: 7px; background: transparent; color: var(--muted); cursor: pointer; font-size: .78rem; }
+.filter.active { background: var(--card); color: var(--ink); font-weight: 700; }
+.task-list { display: grid; gap: 10px; padding: 0; margin: 22px 0; list-style: none; }
+.task { gap: 12px; min-height: 62px; padding: 12px 15px; border: 1px solid var(--line); border-radius: 13px; background: #fff; }
+.task-main { display: flex; align-items: center; min-width: 0; gap: 12px; }
+.check { display: grid; flex: 0 0 auto; width: 22px; height: 22px; place-items: center; border: 1.5px solid #bdc9bd; border-radius: 50%; background: white; color: white; cursor: pointer; }
+.completed .check { border-color: var(--done); background: var(--done); }
+.task-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
+.completed .task-title { color: #95a098; text-decoration: line-through; }
+.tag { flex: 0 0 auto; padding: 4px 8px; border-radius: 99px; background: #fff1df; color: #c9782d; font-size: .7rem; font-weight: 700; }
+.remove { border: 0; background: transparent; color: #b6bdb6; cursor: pointer; font-size: 1.15rem; }
+.remove:hover { color: #c46b63; }
+.add-task { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; padding-top: 8px; }
+.add-task input, .add-task select { min-width: 0; border: 1px solid var(--line); border-radius: 10px; background: white; color: var(--ink); outline-color: var(--accent); }
+.add-task input { padding: 12px 14px; }
+.add-task select { padding: 0 8px; color: var(--muted); font-size: .8rem; }
+.add-task button { width: 44px; border: 0; border-radius: 10px; background: var(--ink); color: white; cursor: pointer; font-size: 1.5rem; }
+.empty-state { padding: 24px 0; color: var(--muted); text-align: center; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+@media (max-width: 540px) { .app-shell { padding: 38px 20px 26px; } .progress-card { margin: 32px 0; } .add-task { grid-template-columns: 1fr auto; } .add-task select { display: none; } }
